@@ -93,13 +93,13 @@ Note that the sequencing windows overlap.
 The rollup reads the following data from the [sequencing window][g-sequencing-window]:
 
 - Of the *first* block in the window only:
+  - L1 log entries emitted for [user deposits][g-deposits], augmented with a [sourceHash](./deposits.md#).
+- Of each block in the window:
   - L1 block attributes:
     - block number
     - timestamp
     - basefee
     - *random* (the output of the [`RANDOM` opcode][random])
-  - L1 log entries emitted for [user deposits][g-deposits], augmented with a [sourceHash](./deposits.md#).
-- Of each block in the window:
   - Sequencer batches, derived from the transactions:
     - The transaction receiver is the sequencer inbox address
     - The transaction must be signed by a recognized sequencer account
